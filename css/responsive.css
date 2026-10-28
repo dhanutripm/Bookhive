@@ -1,0 +1,201 @@
+
+/* ===========================
+   RESPONSIVE DESIGN
+   BookHive
+   Based on PDF pages 57-62
+   =========================== */
+
+
+/* ===========================
+   TABLET (768px and below)
+   =========================== */
+
+@media (max-width: 768px) {
+
+    /* Header - stack on mobile */
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        justify-content: center;
+        gap: var(--space-xs);
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+
+    /* Hero - smaller text */
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: var(--space-lg) var(--space-md);
+        min-height: 300px;
+    }
+
+    /* Featured books - tighter grid */
+    .featured h2 {
+        font-size: 2rem;
+    }
+
+    /* Filters - stack on mobile */
+    .filter-controls {
+        flex-direction: column;
+    }
+
+    /* Cart table - hide some columns on mobile */
+    .cart-table thead {
+        display: none;
+    }
+
+    .cart-table tbody tr {
+        display: block;
+        margin-bottom: var(--space-md);
+        background: var(--white);
+        padding: var(--space-md);
+        border-radius: var(--border-radius);
+    }
+
+    .cart-table td {
+        display: block;
+        text-align: left;
+        padding: var(--space-xs) 0;
+    }
+}
+
+
+/* ===========================
+   MOBILE (480px and below)
+   =========================== */
+
+@media (max-width: 480px) {
+
+    /* Even tighter on phones */
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .book-card img {
+        height: 180px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* ===========================
+   LARGE DESKTOPS (1400px+)
+   =========================== */
+
+@media (min-width: 1400px) {
+
+    .hero h2 {
+        font-size: 4rem;
+    }
+
+    .featured h2,
+    .categories h2 {
+        font-size: 3rem;
+    }
+}
+
+
+/* ===========================
+   ANIMATIONS
+   Based on PDF pages 61-62
+   =========================== */
+
+/* Fade in on page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h2,
+.hero p,
+.hero .btn {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hero p {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.hero .btn {
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+
+/* Pulse for sale tags */
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.sale-tag {
+    background: var(--error);
+    color: var(--white);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+
+/* Loading spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: var(--space-lg) auto;
+}

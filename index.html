@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.   om/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHive - Online Bookstore</title>
+    <meta name="description" content="Discover books, bestsellers and Indian authors at BookHive.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/books.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>📚 BookHive</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" id="cart-link">
+                🛒 Cart (<span id="cart-count">0</span>)
+            </a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2 id="hero-title">Welcome to BookHive</h2>
+            <p id="hero-subtitle">
+                Discover your next great read.
+            </p>
+            <a href="books.html" class="btn">Browse Books</a>
+        </section>
+
+        <section class="featured">
+            <h2>Featured Books</h2>
+             <section class="featured">
+            <h2>Featured Books</h2>
+            <div class="book-grid">
+                
+                <!-- Book 1 -->
+                <article class="book-card">
+                    <img src="images/books/wings-of-fire.jpg" alt="Wings of Fire book cover" loading="lazy">
+                    <h3>Wings of Fire</h3>
+                    <p class="author">by A.P.J. Abdul Kalam</p>
+                    <p class="price">₹299</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Book 2 -->
+                <article class="book-card">
+                    <img src="images/books/the-alchemist.jpg" alt="The Alchemist book cover" loading="lazy">
+                    <h3>The Alchemist</h3>
+                    <p class="author">by Paulo Coelho</p>
+                    <p class="price">₹349</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Book 3 -->
+                <article class="book-card">
+                    <img src="images/books/atomic-habits.jpg" alt="Atomic Habits book cover" loading="lazy">
+                    <h3>Atomic Habits</h3>
+                    <p class="author">by James Clear</p>
+                    <p class="price">₹499</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Book 4 -->
+                <article class="book-card">
+                    <img src="images/books/sapiens.jpg" alt="Sapiens book cover" loading="lazy">
+                    <h3>Sapiens</h3>
+                    <p class="author">by Yuval Noah Harari</p>
+                    <p class="price">₹599</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Book 5 -->
+                <article class="book-card">
+                    <img src="images/books/rich-dad.jpg" alt="Rich Dad Poor Dad book cover" loading="lazy">
+                    <h3>Rich Dad Poor Dad</h3>
+                    <p class="author">by Robert Kiyosaki</p>
+                    <p class="price">₹350</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Book 6 -->
+                <article class="book-card">
+                    <img src="images/books/five-point.jpg" alt="Five Point Someone book cover" loading="lazy">
+                    <h3>Five Point Someone</h3>
+                    <p class="author">by Chetan Bhagat</p>
+                    <p class="price">₹199</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Book 7 -->
+                <article class="book-card">
+                    <img src="images/books/subconscious.jpg" alt="The Power of Your Subconscious Mind book cover" loading="lazy">
+                    <h3>The Power of Subconscious Mind</h3>
+                    <p class="author">by Joseph Murphy</p>
+                    <p class="price">₹249</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Book 8 -->
+                <article class="book-card">
+                    <img src="images/books/think-grow.jpg" alt="Think and Grow Rich book cover" loading="lazy">
+                    <h3>Think and Grow Rich</h3>
+                    <p class="author">by Napoleon Hill</p>
+                    <p class="price">₹299</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Book 9 -->
+                <article class="book-card">
+                    <img src="images/books/meluha.jpg" alt="The Immortals of Meluha book cover" loading="lazy">
+                    <h3>The Immortals of Meluha</h3>
+                    <p class="author">by Amish Tripathi</p>
+                    <p class="price">₹399</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Book 10 -->
+                <article class="book-card">
+                    <img src="images/books/ignited-minds.jpg" alt="Ignited Minds book cover" loading="lazy">
+                    <h3>Ignited Minds</h3>
+                    <p class="author">by A.P.J. Abdul Kalam</p>
+                    <p class="price">₹250</p>
+                    <button>Add to Cart</button>
+                </article>
+
+            </div>
+        </section>
+        </section>
+
+        <section class="categories">
+            <h2>Browse by Category</h2>
+
+            <div class="category-list-container">
+                <a class="category" href="books.html?category=fiction">
+                    <h3>Fiction</h3>
+                    <p>Novels and stories</p>
+                </a>
+
+                <a class="category" href="books.html?category=education">
+                    <h3>Education</h3>
+                    <p>Textbooks and study guides</p>
+                </a>
+
+                <a class="category" href="books.html?category=biography">
+                    <h3>Biographies</h3>
+                    <p>Inspiring life stories</p>
+                </a>
+
+                <a class="category" href="books.html?category=business">
+                    <h3>Business</h3>
+                    <p>Business and leadership</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>📚 BookHive</h3>
+                <p>Your next favourite book is waiting.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="contact.html">Contact</a></p>
+                <p><a href="books.html">Browse Books</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 BookHive. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

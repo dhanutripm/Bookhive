@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/books.css">
+<link rel="stylesheet" href="css/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books - BookHive</title>
+</head>
+<body>
+
+    <!-- HEADER WITH NAVIGATION -->
+    <header>
+        <h1>🛒 BookHive</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">🛒 Cart (0)</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PAGE TITLE -->
+        <section class="page-header">
+            <h2>All Books</h2>
+            <p>Browse our complete collection of books</p>
+        </section>
+
+        <!-- SEARCH AND FILTERS -->
+        <section class="filters">
+            <div class="search-box">
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search books, authors, or genres..."
+                >
+                <button type="button">Search</button>
+            </div>
+
+            <div class="filter-controls">
+                <label for="category-filter">Category:</label>
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="education">Education</option>
+                    <option value="biography">Biographies</option>
+                    <option value="business">Business</option>
+                </select>
+
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                    <option value="default">Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- POPULAR CATEGORIES -->
+        <section class="categories-quick">
+            <h3>Popular Categories</h3>
+            <ul class="category-list">
+                <li><a href="#fiction">Fiction</a></li>
+                <li><a href="#nonfiction">Non-Fiction</a></li>
+                <li><a href="#biography">Biographies</a></li>
+                <li><a href="#business">Business</a></li>
+                <li><a href="#children">Children</a></li>
+                <li><a href="#comics">Comics</a></li>
+            </ul>
+        </section>
+
+        <!-- BOOKS GRID: EXACTLY 10 BOOKS -->
+        <section class="books-grid" id="books-container">
+
+            <!-- BOOK 1: Original from PDF -->
+            <article class="book-card" data-id="1">
+                <img
+                    src="images/books/wings-of-fire.jpg"
+                    alt="Wings of Fire"
+                    loading="lazy"
+                >
+                <h3>Wings of Fire</h3>
+                <p class="author">A.P.J. Abdul Kalam</p>
+                <p class="rating">⭐ 4.8 (2,341 reviews)</p>
+                <p class="price">₹299</p>
+                <button class="add-to-cart" data-id="1">
+                    Add to Cart
+                </button>
+            </article>
+
+            <!-- BOOK 2: Original from PDF -->
+            <article class="book-card" data-id="2">
+                <img
+                    src="images/books/the-alchemist.jpg"
+                    alt="The Alchemist"
+                    loading="lazy"
+                >
+                <h3>The Alchemist</h3>
+                <p class="author">Paulo Coelho</p>
+                <p class="rating">⭐ 4.7 (5,012 reviews)</p>
+                <p class="price">₹349</p>
+                <button class="add-to-cart" data-id="2">
+                    Add to Cart
+                </button>
+            </article>
+
+            <!-- BOOK 3: Original from PDF -->
+            <article class="book-card" data-id="3">
+                <img
+                    src="images/books/atomic-habits.jpg"
+                    alt="Atomic Habits"
+                    loading="lazy"
+                >
+                <h3>Atomic Habits</h3>
+                <p class="author">James Clear</p>
+                <p class="rating">⭐ 4.9 (8,420 reviews)</p>
+                <p class="price">₹499</p>
+                <button class="add-to-cart" data-id="3">
+                    Add to Cart
+                </button>
+            </article>
+
+            <!-- BOOK 4: Additional example -->
+            <article class="book-card" data-id="4">
+                <img
+                    src="images/books/sapiens.jpg"
+                    alt="Sapiens"
+                    loading="lazy"
+                >
+                <h3>Sapiens</h3>
+                <p class="author">Yuval Noah Harari</p>
+                <p class="rating">⭐ 4.7</p>
+                <p class="price">₹599</p>
+                <button class="add-to-cart" data-id="4">
+                    Add to Cart
+                </button>
+            </article>
+
+            <!-- BOOK 5: Additional example -->
+            <article class="book-card" data-id="5">
+                <img
+                    src="images/books/rich-dad-poor-dad.jpg"
+                    alt="Rich Dad Poor Dad"
+                    loading="lazy"
+                >
+                <h3>Rich Dad Poor Dad</h3>
+                <p class="author">Robert T. Kiyosaki</p>
+                <p class="rating">⭐ 4.6</p>
+                <p class="price">₹399</p>
+                <button class="add-to-cart" data-id="5">
+                    Add to Cart
+                </button>
+            </article>
+
+            <!-- BOOK 6: Additional example -->
+            <article class="book-card" data-id="6">
+                <img
+                    src="images/books/ikigai.jpg"
+                    alt="Ikigai"
+                    loading="lazy"
+                >
+                <h3>Ikigai</h3>
+                <p class="author">Héctor García and Francesc Miralles</p>
+                <p class="rating">⭐ 4.6</p>
+                <p class="price">₹299</p>
+                <button class="add-to-cart" data-id="6">
+                    Add to Cart
+                </button>
+            </article>
+
+            <!-- BOOK 7: Additional example -->
+            <article class="book-card" data-id="7">
+                <img
+                    src="images/books/power-of-habit.jpg"
+                    alt="The Power of Habit"
+                    loading="lazy"
+                >
+                <h3>The Power of Habit</h3>
+                <p class="author">Charles Duhigg</p>
+                <p class="rating">⭐ 4.5</p>
+                <p class="price">₹449</p>
+                <button class="add-to-cart" data-id="7">
+                    Add to Cart
+                </button>
+            </article>
+
+            <!-- BOOK 8: Additional example -->
+            <article class="book-card" data-id="8">
+                <img
+                    src="images/books/think-and-grow-rich.jpg"
+                    alt="Think and Grow Rich"
+                    loading="lazy"
+                >
+                <h3>Think and Grow Rich</h3>
+                <p class="author">Napoleon Hill</p>
+                <p class="rating">⭐ 4.7</p>
+                <p class="price">₹249</p>
+                <button class="add-to-cart" data-id="8">
+                    Add to Cart
+                </button>
+            </article>
+
+            <!-- BOOK 9: Additional example -->
+            <article class="book-card" data-id="9">
+                <img
+                    src="images/books/psychology-of-money.jpg"
+                    alt="The Psychology of Money"
+                    loading="lazy"
+                >
+                <h3>The Psychology of Money</h3>
+                <p class="author">Morgan Housel</p>
+                <p class="rating">⭐ 4.8</p>
+                <p class="price">₹349</p>
+                <button class="add-to-cart" data-id="9">
+                    Add to Cart
+                </button>
+            </article>
+
+            <!-- BOOK 10: Additional example -->
+            <article class="book-card" data-id="10">
+                <img
+                    src="images/books/harry-potter.jpg"
+                    alt="Harry Potter"
+                    loading="lazy"
+                >
+                <h3>Harry Potter</h3>
+                <p class="author">J. K. Rowling</p>
+                <p class="rating">⭐ 4.9</p>
+                <p class="price">₹499</p>
+                <button class="add-to-cart" data-id="10">
+                    Add to Cart
+                </button>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 BookHive. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

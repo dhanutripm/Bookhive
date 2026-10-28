@@ -1,0 +1,1150 @@
+
+/* =========================================
+   BOOKHIVE - MAIN STYLESHEET
+   Based on the BookHive Project Teaching Guide
+   ========================================= */
+
+
+/* =========================================
+   1. CSS RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    color: #2C2C2C;
+    background-color: #FFF8F0;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul,
+ol {
+    list-style-position: inside;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+
+/* =========================================
+   2. CSS VARIABLES - BRAND COLOURS
+   ========================================= */
+
+:root {
+    --primary: #5B3A29;
+    --accent: #F4A261;
+    --bg: #FFF8F0;
+    --text-dark: #2C2C2C;
+    --text-muted: #6B6B6B;
+    --success: #2E7D32;
+    --error: #C62828;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+
+    --border-radius: 8px;
+    --max-width: 1200px;
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   3. GENERAL LAYOUT
+   ========================================= */
+
+main {
+    width: min(100% - 32px, var(--max-width));
+    margin: 0 auto;
+    padding: var(--space-lg) 0;
+}
+
+.page-header {
+    text-align: center;
+    padding: var(--space-lg) 0;
+}
+
+.page-header h2 {
+    color: var(--primary);
+    font-size: 2.2rem;
+}
+
+.page-header p {
+    color: var(--text-muted);
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+small,
+.muted {
+    color: var(--text-muted);
+}
+
+
+/* =========================================
+   4. HEADER AND NAVIGATION
+   ========================================= */
+
+header {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: var(--space-md) var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+header h1 {
+    margin-bottom: 0;
+    font-size: 1.8rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--white);
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+
+/* =========================================
+   5. HERO SECTION - HOME PAGE
+   ========================================= */
+
+.hero {
+    min-height: 320px;
+    padding: 64px 24px;
+    border-radius: 12px;
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #8B5E3C
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    animation: fadeIn 0.8s ease;
+}
+
+.hero h2 {
+    color: var(--white);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-bottom: 0;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 650px;
+}
+
+.hero .btn {
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   6. BUTTONS
+   ========================================= */
+
+.btn,
+.btn-primary,
+.btn-secondary,
+button {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 18px;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.btn,
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--primary);
+    font-weight: 700;
+    text-align: center;
+}
+
+.btn:hover,
+.btn-primary:hover {
+    background-color: #E88B3D;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background-color: #754A32;
+    transform: translateY(-2px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   7. FEATURED BOOKS AND BOOK CARDS
+   ========================================= */
+
+.featured {
+    padding: var(--space-lg) 0;
+}
+
+.featured > h2,
+.categories > h2 {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.featured,
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+    );
+    gap: var(--space-md);
+}
+
+.featured > h2 {
+    grid-column: 1 / -1;
+}
+
+.book-card {
+    background-color: var(--white);
+    border: 1px solid #E8DED5;
+    border-radius: 12px;
+    padding: var(--space-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+    animation: fadeIn 0.6s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.book-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background-color: #FAF5EF;
+    border-radius: var(--border-radius);
+    margin-bottom: 8px;
+}
+
+.book-card h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.book-card p {
+    margin-bottom: 4px;
+}
+
+.book-card .author {
+    color: var(--text-muted);
+}
+
+.book-card .rating {
+    color: #B7791F;
+    font-size: 0.9rem;
+}
+
+.book-card .price,
+.price {
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.book-card button,
+.book-card .btn-primary {
+    width: 100%;
+    margin-top: auto;
+}
+
+.sale-tag {
+    background-color: var(--error);
+    color: var(--white);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+
+/* =========================================
+   8. CATEGORIES
+   ========================================= */
+
+.categories {
+    padding: var(--space-lg) 0;
+}
+
+.categories > h2 {
+    text-align: center;
+}
+
+.categories,
+.categories-quick .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.categories > h2 {
+    width: 100%;
+}
+
+.category {
+    flex: 1 1 200px;
+    background-color: var(--white);
+    border: 1px solid #E8DED5;
+    border-radius: var(--border-radius);
+    padding: var(--space-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+}
+
+.category:hover {
+    transform: translateY(-4px);
+}
+
+.category h3 {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   9. SEARCH AND FILTERS - BOOKS PAGE
+   ========================================= */
+
+.filters {
+    background-color: var(--white);
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.search-box {
+    display: flex;
+    flex: 1 1 300px;
+    gap: 8px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+}
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-controls label {
+    font-weight: 600;
+}
+
+.filter-controls select {
+    width: auto;
+    min-width: 130px;
+}
+
+.categories-quick {
+    margin-bottom: var(--space-lg);
+}
+
+.categories-quick h3 {
+    color: var(--primary);
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.category-list li a {
+    display: inline-block;
+    background-color: var(--white);
+    border: 1px solid #E8DED5;
+    color: var(--primary);
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.category-list li a:hover {
+    background-color: var(--accent);
+}
+
+
+/* =========================================
+   10. FORMS - LOGIN, SIGNUP AND CONTACT
+   ========================================= */
+
+.form-section,
+.contact-section {
+    width: min(100%, 600px);
+    margin: var(--space-lg) auto;
+    padding: var(--space-lg);
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.form-section > h2,
+.form-section > p,
+.contact-section > h2,
+.contact-section > p {
+    text-align: center;
+}
+
+.form-section > h2,
+.contact-section > h2 {
+    color: var(--primary);
+}
+
+.login-form,
+.signup-form,
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #D6C9BE;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    color: var(--text-dark);
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(91, 58, 41, 0.1);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--primary);
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-group label {
+    font-weight: 400;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.checkbox-grid label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+}
+
+.form-group small {
+    color: var(--text-muted);
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.form-link a,
+.contact-info a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.form-link a:hover,
+.contact-info a:hover {
+    color: #A65D2E;
+}
+
+.login-form .btn-primary,
+.signup-form .btn-primary,
+.contact-form .btn-primary {
+    width: 100%;
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   11. CONTACT INFORMATION
+   ========================================= */
+
+.contact-info {
+    width: min(100%, 600px);
+    margin: var(--space-lg) auto;
+    padding: var(--space-lg);
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-info h3 {
+    color: var(--primary);
+}
+
+.contact-info p {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   12. BOOK DETAIL PAGE
+   ========================================= */
+
+.breadcrumb {
+    margin-bottom: var(--space-md);
+    color: var(--text-muted);
+}
+
+.breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: ">";
+    margin-left: 8px;
+    color: var(--text-muted);
+}
+
+.breadcrumb a {
+    color: var(--primary);
+}
+
+.book-detail {
+    display: grid;
+    grid-template-columns: minmax(220px, 350px) minmax(0, 1fr);
+    gap: var(--space-xl);
+    align-items: start;
+    background-color: var(--white);
+    padding: var(--space-lg);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.book-detail > img,
+.book-detail .book-cover {
+    width: 100%;
+    max-height: 460px;
+    object-fit: contain;
+    background-color: #FAF5EF;
+    border-radius: var(--border-radius);
+}
+
+.book-info h2 {
+    margin-bottom: 8px;
+}
+
+.book-info .author {
+    color: var(--text-muted);
+}
+
+.book-info .rating {
+    color: #B7791F;
+}
+
+.book-info .price {
+    font-size: 1.6rem;
+}
+
+.book-info s {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.book-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: var(--space-md) 0;
+}
+
+.book-details dt {
+    font-weight: 700;
+}
+
+.book-details dd {
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
+}
+
+.purchase-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: var(--space-md);
+}
+
+.purchase-actions label {
+    font-weight: 600;
+}
+
+.purchase-actions input[type="number"] {
+    width: 85px;
+}
+
+.purchase-actions button {
+    flex: 1 1 130px;
+}
+
+
+/* =========================================
+   13. CUSTOMER REVIEWS
+   ========================================= */
+
+.reviews {
+    margin-top: var(--space-xl);
+}
+
+.reviews > h3 {
+    color: var(--primary);
+    margin-bottom: var(--space-md);
+}
+
+.review {
+    background-color: var(--white);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--border-radius);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.review h4 {
+    color: var(--primary);
+}
+
+.review .reviewer {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   14. SHOPPING CART TABLE
+   ========================================= */
+
+.cart-section {
+    width: 100%;
+}
+
+.cart-section h2 {
+    margin-bottom: var(--space-lg);
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 14px;
+    border: 1px solid #E8DED5;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.cart-table th {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.cart-table tbody tr:nth-child(even) {
+    background-color: #FFF9F3;
+}
+
+.cart-table tbody tr:hover {
+    background-color: #FFF0DF;
+}
+
+.cart-table img {
+    width: 60px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.cart-table .qty-input {
+    width: 75px;
+}
+
+.cart-table tfoot {
+    font-weight: 700;
+    background-color: #F8EDE2;
+}
+
+.remove-btn {
+    background-color: var(--error);
+    color: var(--white);
+    padding: 7px 10px;
+}
+
+.remove-btn:hover {
+    background-color: #A51F1F;
+}
+
+
+/* =========================================
+   15. ORDER SUMMARY
+   ========================================= */
+
+.order-summary {
+    width: min(100%, 400px);
+    margin-left: auto;
+    padding: var(--space-lg);
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.order-summary h3 {
+    color: var(--primary);
+    margin-bottom: var(--space-md);
+}
+
+.order-summary dl {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    margin-bottom: var(--space-lg);
+}
+
+.order-summary dd {
+    text-align: right;
+}
+
+.order-summary .btn-primary,
+.order-summary .btn-secondary {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   16. FOOTER
+   ========================================= */
+
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: var(--space-lg);
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: var(--white);
+    margin: 0 5px;
+}
+
+footer a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   17. LOADING SPINNER
+   ========================================= */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #F3F3F3;
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: var(--space-lg) auto;
+}
+
+
+/* =========================================
+   18. OTHER ANIMATIONS
+   ========================================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+
+/* =========================================
+   19. TABLET RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-md);
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav a {
+        padding: 8px 10px;
+    }
+
+    .hero {
+        min-height: 280px;
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-controls {
+        justify-content: flex-start;
+    }
+
+    .book-detail {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .book-detail > img,
+    .book-detail .book-cover {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        padding: 8px;
+    }
+
+    .order-summary {
+        margin-left: 0;
+    }
+}
+
+
+/* =========================================
+   20. MOBILE RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 480px) {
+    html {
+        font-size: 15px;
+    }
+
+    main {
+        width: min(100% - 20px, var(--max-width));
+        padding: var(--space-md) 0;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 4px;
+    }
+
+    nav a {
+        padding: 6px 8px;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        min-height: 240px;
+        padding: var(--space-lg) 12px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .featured,
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-card img {
+        height: 220px;
+    }
+
+    .form-section,
+    .contact-section,
+    .contact-info {
+        padding: var(--space-md);
+    }
+
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-controls select {
+        width: 100%;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .book-details {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .book-details dd {
+        margin-bottom: 8px;
+    }
+
+    .purchase-actions {
+        align-items: stretch;
+    }
+
+    .purchase-actions label {
+        width: 100%;
+    }
+
+    .purchase-actions input[type="number"] {
+        width: 100%;
+    }
+
+    /* Allow the cart table to scroll on small screens */
+    .cart-section {
+        overflow-x: auto;
+    }
+
+    .cart-table {
+        min-width: 650px;
+    }
+
+    .order-summary {
+        width: 100%;
+    }
+
+    footer {
+        padding: var(--space-md);
+    }
+}
+
+
+/* =========================================
+   21. ACCESSIBILITY: REDUCE ANIMATIONS
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
